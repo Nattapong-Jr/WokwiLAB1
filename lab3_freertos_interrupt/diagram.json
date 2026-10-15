@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "ESP32 FreeRTOS Interrupt Lab",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": 0,
+      "left": -100,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "button",
+      "top": 60,
+      "left": 160,
+      "attrs": { "color": "red", "label": "PRESS" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:4", "button:1.l", "green", [ "h0" ] ],
+    [ "esp:GND.1", "button:2.l", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
